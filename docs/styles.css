@@ -1,55 +1,102 @@
-/* Das Erbe der Neun – Download-Seite. Farben aus den App-Themes (Themes/Light.xaml und Themes/Dark.xaml). */
+/* Das Erbe der Neun – Download-Seite im Look „Pergament & Siegel“ (hell) bzw. „Nachtarchiv“ (dunkel).
+   Farben aus den App-Themes (Themes/Light.xaml und Themes/Dark.xaml), Schriften lokal unter fonts/ (keine Google-Verbindung). */
+
+/* Schriften (SIL Open Font License 1.1, Lizenztexte in fonts/): Source Serif 4 für Text, Cormorant Garamond für Titel */
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/SourceSerif4-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/SourceSerif4-Semibold.woff2") format("woff2");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("fonts/CormorantGaramond-SemiBold.woff2") format("woff2");
+  font-weight: 500 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("fonts/CormorantGaramond-MediumItalic.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
-  --bg: #F3F5FA;            /* Brush.Window.Background */
-  --surface: #FFFFFF;       /* Brush.Surface */
-  --surface-alt: #F6F8FC;   /* Brush.Surface.Alt */
-  --border: #E0E5EE;        /* Brush.Surface.Border */
-  --text: #1E2532;          /* Brush.Text.Primary */
-  --text-muted: #5B6476;    /* etwas dunkler als Brush.Text.Secondary (#677085), Kontrast ≥ 4,5:1 auch auf --bg */
-  --accent: #3B6FE0;        /* Brush.Accent */
-  --accent-hover: #2F60CC;  /* Brush.Accent.Hover */
-  --accent-pressed: #264FAD;/* Brush.Accent.Pressed */
-  --accent-fg: #FFFFFF;     /* Brush.Accent.Foreground */
-  --accent-text: #2F60CC;   /* Brush.Accent.Text (Links) */
-  --accent-soft: #EAF0FC;   /* Brush.Cell.Related */
-  --focus: #3B6FE0;         /* Brush.Focus */
-  --coin: #F2B705;          /* Brush.Coin */
-  --hero-from: #2F60CC;   /* Brush.Accent.Hover – dunkler als der Akzent, damit Text darauf ≥ 4,5:1 hat */
-  --hero-to: #264FAD;
-  --hero-text: #FFFFFF;
-  --hero-muted: #EEF2FD;
-  --hero-focus: #FFE27A;    /* Brush.Coin.Shine */
-  --ss-bg: #1D5BB0;         /* Skizze der Windows-Meldung */
+  --font-text: "Source Serif 4", Cambria, Georgia, serif;
+  --font-title: "Cormorant Garamond", Cambria, Georgia, serif;
+  --bg: #E6D8BC;            /* Brush.Window.Background (Pergament) */
+  --surface: #F7EFDD;       /* Brush.Surface */
+  --surface-alt: #F1E5CB;   /* Brush.Surface.Alt */
+  --border: #B9A07A;        /* Brush.Surface.Border */
+  --rule: #C49A45;          /* Brush.Card.InnerRule (Gold) */
+  --text: #2B1D14;          /* Brush.Text.Primary (Tintenbraun) */
+  --text-muted: #5E4534;    /* etwas dunkler als Brush.Text.Secondary, Kontrast ≥ 4,5:1 auch auf --bg */
+  --title: #2B1D14;         /* Brush.Text.Title */
+  --accent: #8A1E31;        /* Brush.Accent (Bordeaux) */
+  --accent-hover: #791A2B;  /* Brush.Accent.Hover */
+  --accent-pressed: #691725;/* Brush.Accent.Pressed */
+  --accent-fg: #FBF5E8;     /* Brush.Accent.Foreground */
+  --accent-rule: #D8AD55;   /* Brush.Accent.InnerRule (Goldkante) */
+  --accent-text: #8A1E31;   /* Brush.Accent.Text (Links) */
+  --accent-soft: #F0E3C6;   /* Brush.Cell.Related */
+  --focus: #8A1E31;         /* Brush.Focus */
+  --coin: #D9AE4E;          /* Brush.Coin */
+  --ornament: #8A1E31;      /* Brush.Ornament (Raute) */
+  --ornament-line: #C49A45; /* Brush.Ornament.Line */
+  --hero-bg: radial-gradient(ellipse at 50% 35%, rgba(255, 250, 235, .7), rgba(255, 250, 235, 0) 70%), #E6D8BC;
+  --hero-text: #2B1D14;
+  --hero-muted: #5E4534;
+  --hero-focus: #8A1E31;
+  --ss-bg: #1D5BB0;         /* Skizze der Windows-Meldung (bleibt im Windows-Blau) */
   --ss-text: #FFFFFF;
   --ss-btn: #E9EDF5;
   --ss-btn-text: #1E2532;
-  --shadow: 0 1px 2px rgba(30, 37, 50, .06), 0 8px 24px rgba(30, 37, 50, .08);
-  --radius: 16px;
-  --radius-small: 10px;
+  --shadow: 0 1px 2px rgba(70, 35, 10, .08), 0 10px 28px rgba(70, 35, 10, .14);
+  --radius: 4px;
+  --radius-small: 4px;
   color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #14171E;          /* Dark: Brush.Window.Background */
-    --surface: #1E232E;     /* Brush.Surface */
-    --surface-alt: #242A37; /* Brush.Surface.Alt */
-    --border: #2F3646;      /* Brush.Surface.Border */
-    --text: #E9EDF5;        /* Brush.Text.Primary */
-    --text-muted: #A4ADBF;  /* Brush.Text.Secondary */
-    --accent: #3A6AD4;      /* Brush.Accent */
-    --accent-hover: #3563C8;
-    --accent-pressed: #2C55B0;
-    --accent-fg: #FFFFFF;
-    --accent-text: #9DBEFF; /* Brush.Accent.Text */
-    --accent-soft: #232C40;
-    --focus: #8AB0FF;       /* Brush.Focus */
-    --hero-from: #22335E;
-    --hero-to: #14171E;
-    --hero-muted: #C9D3E8;
+    --bg: #170B0F;          /* Nachtarchiv: Brush.Window.Background */
+    --surface: #261317;     /* Brush.Surface */
+    --surface-alt: #2B171C; /* Brush.Surface.Alt */
+    --border: #6A4E40;      /* Brush.Surface.Border */
+    --rule: #8C6B33;        /* Brush.Card.InnerRule */
+    --text: #F1E6CF;        /* Brush.Text.Primary */
+    --text-muted: #C7B38F;  /* Brush.Text.Secondary */
+    --title: #E9CF8E;       /* Brush.Text.Title (Gold) */
+    --accent: #8A1E31;      /* Brush.Accent */
+    --accent-hover: #962F40;
+    --accent-pressed: #711927;
+    --accent-fg: #F7E1A0;   /* Brush.Accent.Foreground (Gold auf Bordeaux) */
+    --accent-rule: #D8AD55;
+    --accent-text: #E9C46A; /* Brush.Accent.Text */
+    --accent-soft: #33202A;
+    --focus: #F0CF7A;       /* Brush.Focus */
+    --ornament: #D8AD55;
+    --ornament-line: #C9A04A;
+    --hero-bg: radial-gradient(ellipse 60% 70% at 12% 8%, rgba(232, 178, 90, .2), rgba(232, 178, 90, 0) 70%),
+               radial-gradient(ellipse 70% 60% at 95% 100%, rgba(138, 30, 49, .35), rgba(138, 30, 49, 0) 70%), #170B0F;
+    --hero-text: #F1E6CF;
+    --hero-muted: #C7B38F;
+    --hero-focus: #F0CF7A;
     --ss-bg: #1A4C93;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .45);
   }
 }
 
@@ -74,7 +121,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
+  font-family: var(--font-text);
+  font-variant-numeric: lining-nums;
   font-size: 1.125rem;
   line-height: 1.6;
   overflow-wrap: break-word;
@@ -106,9 +154,16 @@ h1, h2, h3 {
   margin: 0;
 }
 
+/* Überschriften in der Titelschrift der App (Cormorant Garamond, mit Lining-Ziffern) */
+h1, h2 {
+  font-family: var(--font-title);
+  font-variant-numeric: lining-nums;
+  color: var(--title);
+}
+
 h2 {
-  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
-  font-weight: 700;
+  font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.6rem);
+  font-weight: 600;
   text-align: center;
 }
 
@@ -156,8 +211,10 @@ p:last-child {
 /* ------------------------------------------------------------ Kopfbereich */
 
 .hero {
-  background: linear-gradient(160deg, var(--hero-from), var(--hero-to));
+  background: var(--hero-bg);
   color: var(--hero-text);
+  border-bottom: 1px solid var(--border);
+  box-shadow: inset 0 -6px 0 var(--surface), inset 0 -7px 0 var(--rule);
   padding: 16px 16px clamp(48px, 8vw, 88px);
   text-align: center;
 }
@@ -187,7 +244,7 @@ p:last-child {
 }
 
 .topnav a:hover {
-  background: rgba(255, 255, 255, .15);
+  background: var(--accent-soft);
 }
 
 .hero-inner {
@@ -199,39 +256,52 @@ p:last-child {
   width: clamp(96px, 20vw, 128px);
   height: auto;
   margin: 0 auto 16px;
-  filter: drop-shadow(0 10px 24px rgba(8, 20, 60, .35));
+  filter: drop-shadow(0 10px 18px rgba(70, 20, 10, .3));
 }
 
 .hero h1 {
-  /* Klassische Serifenschrift wie der Titel im Hauptmenü der App */
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.4rem, 1.5rem + 4.4vw, 4rem);
-  font-weight: 400;
+  /* Titelschrift wie im Hauptmenü der App */
+  font-size: clamp(2.8rem, 1.7rem + 5vw, 4.8rem);
+  font-weight: 600;
   letter-spacing: 0;
+  line-height: 1.05;
 }
 
-/* Untertitel „Ein Sudoku-Epos“ zwischen zwei feinen goldenen Linien (wie im Hauptmenü der App) */
+/* Untertitel „Ein Sudoku-Epos“ kursiv zwischen zwei Ornamentlinien mit Raute (wie im Hauptmenü der App) */
 .subtitle {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: .7em;
   margin: .35em 0 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-title);
   font-style: italic;
-  font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.9rem);
   color: var(--hero-muted);
 }
 
-.subtitle::before,
-.subtitle::after {
-  content: "";
+/* Ornamentlinie: Goldlinie mit Bordeaux- bzw. Goldraute zum Text hin (Spans im HTML, aria-hidden) */
+.orn {
+  position: relative;
   flex: none;
-  width: clamp(28px, 6vw, 56px);
-  height: 2px;
-  background: var(--coin);
-  border-radius: 1px;
+  width: clamp(36px, 7vw, 64px);
+  height: 1px;
+  background: var(--ornament-line);
 }
+
+.orn::after {
+  content: "";
+  position: absolute;
+  top: -3.5px;
+  width: 8px;
+  height: 8px;
+  background: var(--ornament);
+  transform: rotate(45deg);
+}
+
+.orn-l::after { right: -4px; }
+.orn-r::after { left: -4px; }
 
 .tagline {
   font-size: clamp(1.15rem, 1rem + .8vw, 1.45rem);
@@ -248,20 +318,22 @@ p:last-child {
   max-width: 100%;
   min-height: 64px;
   padding: .7em 1.6em;
-  border-radius: 14px;
-  background: #FFFFFF;
-  color: #1F4FB8;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-fg);
   font-size: clamp(1.15rem, 1rem + .9vw, 1.45rem);
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 10px 28px rgba(8, 20, 60, .3);
+  /* Bordeaux mit innerer Goldkante wie der Hauptknopf der App */
+  box-shadow: inset 0 0 0 2px var(--accent), inset 0 0 0 3px var(--accent-rule), 0 10px 24px rgba(70, 20, 10, .28);
   transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
 }
 
 .download-button:hover {
-  background: #F1F5FF;
+  background: var(--accent-hover);
   transform: translateY(-1px);
-  box-shadow: 0 14px 32px rgba(8, 20, 60, .35);
+  box-shadow: inset 0 0 0 2px var(--accent-hover), inset 0 0 0 3px var(--accent-rule), 0 14px 30px rgba(70, 20, 10, .32);
 }
 
 .download-button:active {
@@ -359,10 +431,11 @@ p:last-child {
   margin-left: auto;
   margin-right: auto;
   padding: clamp(22px, 4vw, 36px) clamp(20px, 5vw, 48px);
-  border-top: 4px solid var(--coin);
+  border-top: 3px double var(--rule);
   text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.1rem, 1rem + .4vw, 1.25rem);
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: clamp(1.3rem, 1.15rem + .5vw, 1.55rem);
   line-height: 1.6;
 }
 
@@ -494,7 +567,7 @@ p:last-child {
   height: 1.6em;
   border-radius: 50%;
   background: var(--coin);
-  color: #1E2532;
+  color: #2A1408;
   font-weight: 700;
   font-size: .9rem;
   text-decoration: none;

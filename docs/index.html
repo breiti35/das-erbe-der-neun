@@ -6,8 +6,8 @@
   <title>Das Erbe der Neun – Ein Sudoku-Epos</title>
   <meta name="description" content="Das Erbe der Neun – Ein Sudoku-Epos: ein kostenloses Sudoku für Windows 10 und 11 mit fünf Schwierigkeitsstufen, Kampagne mit 50 Stufen, tägliches Rätsel, Erfolge und Farbthemen. Ohne Konto, offline spielbar.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#3B6FE0" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#14171E" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#E6D8BC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#170B0F" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://breiti35.github.io/das-erbe-der-neun/">
 
   <meta property="og:type" content="website">
@@ -19,12 +19,15 @@
   <meta property="og:image" content="https://breiti35.github.io/das-erbe-der-neun/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Schriftzug „Das Erbe der Neun – Ein Sudoku-Epos“, das Spielsymbol und ein Sudoku-Spielfeld mit eingetragenen Zahlen">
+  <meta property="og:image:alt" content="Auf Pergament: das bordeauxrote Siegel mit goldenem Schlüssel, der Schriftzug „Das Erbe der Neun – Ein Sudoku-Epos“ und ein Sudoku-Spielfeld im Doppelrahmen">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <!-- Schriften liegen auf dieser Seite selbst (fonts/, SIL Open Font License) – keine Verbindung zu Google -->
+  <link rel="preload" href="fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/CormorantGaramond-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
@@ -42,7 +45,7 @@
     <div class="hero-inner">
       <img class="app-icon" src="img/icon-256.png" width="128" height="128" alt="">
       <h1>Das Erbe der Neun</h1>
-      <p class="subtitle">Ein Sudoku-Epos</p>
+      <p class="subtitle"><span class="orn orn-l" aria-hidden="true"></span>Ein Sudoku-Epos<span class="orn orn-r" aria-hidden="true"></span></p>
       <p class="tagline">Das Zahlenrätsel für die kleine Pause – mit Kampagne, Tagesrätsel und Belohnungen</p>
 
       <a class="download-button" id="download"
@@ -73,25 +76,25 @@
       <p class="section-intro">Klicke auf ein Bild, um es groß zu sehen.</p>
       <div class="gallery">
         <figure class="shot shot-wide">
-          <a href="img/spielfeld-hell.webp">
-            <img src="img/spielfeld-hell.webp" width="1920" height="1200"
-                 alt="Spielfeld im hellen Design: ein Sudoku der Stufe Mittel mit eingetragenen Zahlen und kleinen Notizen, rechts die Zifferntasten, die Uhr und die Hilfsmittel.">
+          <a href="img/spielfeld-pergament.webp">
+            <img src="img/spielfeld-pergament.webp" width="1920" height="1200"
+                 alt="Spielfeld im hellen Farbthema „Pergament“: ein Sudoku der Stufe Mittel auf cremefarbenem Papier mit bordeauxrotem Doppelrahmen, Vorgaben in Tintenbraun, eigene Zahlen in Blau, kleine Notizen; rechts die Zifferntasten, die Uhr und die Hilfsmittel.">
           </a>
-          <figcaption>Das Spielfeld: große Zahlen, Notizen und praktische Hilfen</figcaption>
+          <figcaption>Das Spielfeld im Farbthema „Pergament“: große Zahlen, Notizen und praktische Hilfen</figcaption>
         </figure>
         <figure class="shot">
           <a href="img/hauptmenue.webp">
             <img src="img/hauptmenue.webp" width="1920" height="1200" loading="lazy"
-                 alt="Das Hauptmenü im dunkelgrünen Farbthema „Wald“ mit dem Titel „Das Erbe der Neun – Ein Sudoku-Epos“, der Spielerleiste mit Level und Münzen und den Knöpfen für Fortsetzen, Neues Spiel, Kampagne, Tagesrätsel und Shop.">
+                 alt="Das Hauptmenü im dunklen Farbthema „Nachtarchiv“: das Siegel, der Titel „Das Erbe der Neun – Ein Sudoku-Epos“, die Spielerleiste mit Level und Münzen und die Knöpfe für Fortsetzen, Neues Spiel, Kampagne, Tagesrätsel und Shop, mit goldenen Eckbeschlägen.">
           </a>
-          <figcaption>Das Hauptmenü im Farbthema „Wald“</figcaption>
+          <figcaption>Das Hauptmenü im Farbthema „Nachtarchiv“</figcaption>
         </figure>
         <figure class="shot">
-          <a href="img/spielfeld-sonnenuntergang.webp">
-            <img src="img/spielfeld-sonnenuntergang.webp" width="1920" height="1200" loading="lazy"
-                 alt="Dasselbe Spielfeld im dunklen Farbthema „Sonnenuntergang“ mit orangefarbenen Zahlen.">
+          <a href="img/spielfeld-nachtarchiv.webp">
+            <img src="img/spielfeld-nachtarchiv.webp" width="1920" height="1200" loading="lazy"
+                 alt="Dasselbe Spielfeld im dunklen Farbthema „Nachtarchiv“ mit goldenen Linien und goldenen eigenen Zahlen.">
           </a>
-          <figcaption>Farbthema „Sonnenuntergang“</figcaption>
+          <figcaption>Farbthema „Nachtarchiv“ für den Abend</figcaption>
         </figure>
         <figure class="shot">
           <a href="img/kampagne.webp">
@@ -103,7 +106,7 @@
         <figure class="shot">
           <a href="img/shop.webp">
             <img src="img/shop.webp" width="1920" height="1200" loading="lazy"
-                 alt="Der Shop mit sieben Farbthemen wie Hell, Dunkel, Ozean, Wald und Neon, die man mit Münzen kaufen kann.">
+                 alt="Der Shop mit sieben Farbthemen wie Pergament, Nachtarchiv, Seekarte, Herbarium und Buntglas, die man mit Münzen kaufen kann.">
           </a>
           <figcaption>Im Shop gibt es Farbthemen und Goodies</figcaption>
         </figure>
@@ -210,7 +213,7 @@
         <li class="feature">
           <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5a8.5 8.5 0 1 0 0 17c1.4 0 2-.8 2-1.8 0-1.3-1.2-1.7-1.2-2.9 0-1 .8-1.8 1.8-1.8h2.2a3.7 3.7 0 0 0 3.7-3.7C20.5 6.6 16.7 3.5 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="11" r="1.3" fill="currentColor"/><circle cx="10" cy="7.3" r="1.3" fill="currentColor"/><circle cx="14.5" cy="7.3" r="1.3" fill="currentColor"/></svg>
           <h3>7 Farbthemen</h3>
-          <p>Hell, Dunkel, Ozean, Wald, Sonnenuntergang, Neon und Papier – dazu verschiedene Zahlen-Schriften.</p>
+          <p>Pergament, Nachtarchiv, Seekarte, Herbarium, Bernstein, Buntglas und Bütten – dazu verschiedene Zahlen-Schriften.</p>
         </li>
         <li class="feature">
           <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9.5a12 12 0 0 1 16 0M7 13a7.5 7.5 0 0 1 10 0m-7.2 3.4a3 3 0 0 1 4.4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 4l16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -287,6 +290,8 @@
     <p><a href="https://github.com/breiti35/das-erbe-der-neun/releases">Alle Versionen auf GitHub</a></p>
     <p class="footer-note">Diese Seite setzt keine Cookies und nutzt kein Tracking. Nur die Versionsnummer und die
       Neuigkeiten werden beim Öffnen direkt bei GitHub abgefragt.</p>
+    <p class="footer-note">Schriften: Source Serif 4 und Cormorant Garamond, lokal auf dieser Seite, unter der SIL Open Font License
+      (<a href="fonts/OFL-SourceSerif4.txt">Lizenz Source Serif 4</a>, <a href="fonts/OFL-CormorantGaramond.txt">Lizenz Cormorant Garamond</a>).</p>
   </footer>
 </body>
 </html>
