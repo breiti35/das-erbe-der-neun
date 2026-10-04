@@ -1,0 +1,724 @@
+/* Das Erbe der Neun – Download-Seite. Farben aus den App-Themes (Themes/Light.xaml und Themes/Dark.xaml). */
+
+:root {
+  --bg: #F3F5FA;            /* Brush.Window.Background */
+  --surface: #FFFFFF;       /* Brush.Surface */
+  --surface-alt: #F6F8FC;   /* Brush.Surface.Alt */
+  --border: #E0E5EE;        /* Brush.Surface.Border */
+  --text: #1E2532;          /* Brush.Text.Primary */
+  --text-muted: #5B6476;    /* etwas dunkler als Brush.Text.Secondary (#677085), Kontrast ≥ 4,5:1 auch auf --bg */
+  --accent: #3B6FE0;        /* Brush.Accent */
+  --accent-hover: #2F60CC;  /* Brush.Accent.Hover */
+  --accent-pressed: #264FAD;/* Brush.Accent.Pressed */
+  --accent-fg: #FFFFFF;     /* Brush.Accent.Foreground */
+  --accent-text: #2F60CC;   /* Brush.Accent.Text (Links) */
+  --accent-soft: #EAF0FC;   /* Brush.Cell.Related */
+  --focus: #3B6FE0;         /* Brush.Focus */
+  --coin: #F2B705;          /* Brush.Coin */
+  --hero-from: #2F60CC;   /* Brush.Accent.Hover – dunkler als der Akzent, damit Text darauf ≥ 4,5:1 hat */
+  --hero-to: #264FAD;
+  --hero-text: #FFFFFF;
+  --hero-muted: #EEF2FD;
+  --hero-focus: #FFE27A;    /* Brush.Coin.Shine */
+  --ss-bg: #1D5BB0;         /* Skizze der Windows-Meldung */
+  --ss-text: #FFFFFF;
+  --ss-btn: #E9EDF5;
+  --ss-btn-text: #1E2532;
+  --shadow: 0 1px 2px rgba(30, 37, 50, .06), 0 8px 24px rgba(30, 37, 50, .08);
+  --radius: 16px;
+  --radius-small: 10px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171E;          /* Dark: Brush.Window.Background */
+    --surface: #1E232E;     /* Brush.Surface */
+    --surface-alt: #242A37; /* Brush.Surface.Alt */
+    --border: #2F3646;      /* Brush.Surface.Border */
+    --text: #E9EDF5;        /* Brush.Text.Primary */
+    --text-muted: #A4ADBF;  /* Brush.Text.Secondary */
+    --accent: #3A6AD4;      /* Brush.Accent */
+    --accent-hover: #3563C8;
+    --accent-pressed: #2C55B0;
+    --accent-fg: #FFFFFF;
+    --accent-text: #9DBEFF; /* Brush.Accent.Text */
+    --accent-soft: #232C40;
+    --focus: #8AB0FF;       /* Brush.Focus */
+    --hero-from: #22335E;
+    --hero-to: #14171E;
+    --hero-muted: #C9D3E8;
+    --ss-bg: #1A4C93;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .35);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent-text);
+  text-underline-offset: .18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 .8em;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.filename {
+  font-family: Consolas, "Cascadia Mono", "SFMono-Regular", Menlo, monospace;
+  font-size: .92em;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: .05em .35em;
+  word-break: break-all;
+}
+
+/* ------------------------------------------------------------ Sprunglink */
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 10;
+  background: var(--surface);
+  color: var(--text);
+  padding: .6em 1em;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* ------------------------------------------------------------ Kopfbereich */
+
+.hero {
+  background: linear-gradient(160deg, var(--hero-from), var(--hero-to));
+  color: var(--hero-text);
+  padding: 16px 16px clamp(48px, 8vw, 88px);
+  text-align: center;
+}
+
+.hero a:not(.download-button) {
+  color: var(--hero-text);
+}
+
+.hero :focus-visible {
+  outline-color: var(--hero-focus);
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 8px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.topnav a {
+  padding: .35em .75em;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.topnav a:hover {
+  background: rgba(255, 255, 255, .15);
+}
+
+.hero-inner {
+  max-width: 760px;
+  margin: clamp(24px, 5vw, 48px) auto 0;
+}
+
+.app-icon {
+  width: clamp(96px, 20vw, 128px);
+  height: auto;
+  margin: 0 auto 16px;
+  filter: drop-shadow(0 10px 24px rgba(8, 20, 60, .35));
+}
+
+.hero h1 {
+  /* Klassische Serifenschrift wie der Titel im Hauptmenü der App */
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 1.5rem + 4.4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Untertitel „Ein Sudoku-Epos“ zwischen zwei feinen goldenen Linien (wie im Hauptmenü der App) */
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7em;
+  margin: .35em 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+  color: var(--hero-muted);
+}
+
+.subtitle::before,
+.subtitle::after {
+  content: "";
+  flex: none;
+  width: clamp(28px, 6vw, 56px);
+  height: 2px;
+  background: var(--coin);
+  border-radius: 1px;
+}
+
+.tagline {
+  font-size: clamp(1.15rem, 1rem + .8vw, 1.45rem);
+  color: var(--hero-muted);
+  margin: .6em auto 1.4em;
+  max-width: 34em;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6em;
+  max-width: 100%;
+  min-height: 64px;
+  padding: .7em 1.6em;
+  border-radius: 14px;
+  background: #FFFFFF;
+  color: #1F4FB8;
+  font-size: clamp(1.15rem, 1rem + .9vw, 1.45rem);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(8, 20, 60, .3);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+.download-button:hover {
+  background: #F1F5FF;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(8, 20, 60, .35);
+}
+
+.download-button:active {
+  transform: translateY(1px);
+}
+
+.download-icon {
+  flex: none;
+}
+
+.release-meta {
+  margin: 1.1em 0 .3em;
+  font-size: 1rem;
+  color: var(--hero-muted);
+}
+
+.meta-sep {
+  margin: 0 .35em;
+}
+
+.hero-hint {
+  font-size: 1rem;
+  color: var(--hero-muted);
+}
+
+/* ------------------------------------------------------------ Abschnitte */
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(48px, 7vw, 80px) 16px 0;
+}
+
+.section-intro {
+  text-align: center;
+  color: var(--text-muted);
+  margin: .5em 0 2em;
+}
+
+.section > h2 + :not(.section-intro) {
+  margin-top: 1.6em;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ------------------------------------------------------------ Bilder */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.shot {
+  margin: 0;
+}
+
+.shot-wide {
+  grid-column: 1 / -1;
+}
+
+.shot a {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform .15s ease;
+}
+
+.shot a:hover {
+  transform: translateY(-2px);
+}
+
+.shot figcaption {
+  margin-top: .6em;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.shot-wide figcaption {
+  font-size: 1.05rem;
+}
+
+/* ------------------------------------------------------------ Geschichte hinter dem Namen */
+
+.story {
+  max-width: 46em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: clamp(22px, 4vw, 36px) clamp(20px, 5vw, 48px);
+  border-top: 4px solid var(--coin);
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.1rem, 1rem + .4vw, 1.25rem);
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------ Installation */
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+}
+
+.step {
+  display: flex;
+  gap: clamp(14px, 3vw, 28px);
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(18px, 3vw, 32px);
+}
+
+.step-number {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: clamp(52px, 9vw, 72px);
+  height: clamp(52px, 9vw, 72px);
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-size: clamp(1.6rem, 1.1rem + 2vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.step-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.step-body h3 {
+  font-size: clamp(1.3rem, 1.1rem + .8vw, 1.6rem);
+  margin: .2em 0 .5em;
+}
+
+.callout {
+  background: var(--accent-soft);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius-small);
+  padding: 14px 18px;
+  margin: 1em 0 1.2em;
+}
+
+/* Skizze der SmartScreen-Meldung */
+.smartscreen {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.ss-panel {
+  background: var(--ss-bg);
+  color: var(--ss-text);
+  border-radius: 8px;
+  padding: 16px 18px;
+  font-size: .9rem;
+  line-height: 1.45;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+}
+
+.ss-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: .6em;
+}
+
+.ss-text {
+  opacity: .95;
+}
+
+.ss-link {
+  margin-top: .2em;
+}
+
+.ss-link .ss-target {
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+
+.ss-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.ss-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4em;
+  background: var(--ss-btn);
+  color: var(--ss-btn-text);
+  border-radius: 4px;
+  padding: .35em .9em;
+  font-size: .9rem;
+}
+
+.ss-target {
+  outline: 3px solid var(--coin);
+  outline-offset: 3px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.ss-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  background: var(--coin);
+  color: #1E2532;
+  font-weight: 700;
+  font-size: .9rem;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.ss-arrow {
+  color: var(--text-muted);
+  display: grid;
+  place-items: center;
+}
+
+.smartscreen figcaption {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: .95rem;
+}
+
+/* ------------------------------------------------------------ Funktionen */
+
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 20px;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  margin-bottom: 14px;
+}
+
+.feature h3 {
+  font-size: 1.15rem;
+  margin-bottom: .4em;
+}
+
+.feature p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ------------------------------------------------------------ Neu in dieser Version */
+
+.release-notes {
+  padding: clamp(20px, 3vw, 32px);
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notes-version {
+  font-size: 1.25rem;
+  margin-bottom: .2em;
+}
+
+.notes-date {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+.notes-body h3,
+.notes-body h4 {
+  font-size: 1.1rem;
+  margin: 1em 0 .4em;
+}
+
+.notes-body ul,
+.notes-body ol {
+  margin: 0 0 .8em;
+  padding-left: 1.4em;
+}
+
+.notes-body li + li {
+  margin-top: .25em;
+}
+
+.notes-body code {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: .92em;
+  background: var(--surface-alt);
+  border-radius: 4px;
+  padding: .05em .3em;
+}
+
+/* ------------------------------------------------------------ Fragen */
+
+.faq {
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow);
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  border-radius: var(--radius-small);
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "";
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border-right: 2.5px solid currentColor;
+  border-bottom: 2.5px solid currentColor;
+  transform: rotate(45deg) translate(-3px, -3px);
+  transition: transform .15s ease;
+}
+
+.faq details[open] summary::after {
+  transform: rotate(-135deg) translate(-3px, -3px);
+}
+
+.faq summary:hover {
+  color: var(--accent-text);
+}
+
+.faq details p {
+  padding: 0 20px 18px;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------ Fußzeile */
+
+.footer {
+  max-width: 1100px;
+  margin: clamp(56px, 8vw, 96px) auto 0;
+  padding: 28px 16px 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.footer p {
+  margin: 0 0 .4em;
+}
+
+.footer-note {
+  font-size: .9rem;
+  max-width: 40em;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ------------------------------------------------------------ Responsiv */
+
+@media (max-width: 960px) {
+  .features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .smartscreen {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ss-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    font-size: 1.0625rem;
+  }
+
+  .features {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .step {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .download-button {
+    width: 100%;
+    padding: .7em 1em;
+  }
+
+  .meta-sep {
+    margin: 0 .2em;
+  }
+}

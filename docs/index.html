@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Das Erbe der Neun – Ein Sudoku-Epos</title>
+  <meta name="description" content="Das Erbe der Neun – Ein Sudoku-Epos: ein kostenloses Sudoku für Windows 10 und 11 mit fünf Schwierigkeitsstufen, Kampagne mit 50 Stufen, tägliches Rätsel, Erfolge und Farbthemen. Ohne Konto, offline spielbar.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#3B6FE0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14171E" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://breiti35.github.io/das-erbe-der-neun/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Das Erbe der Neun">
+  <meta property="og:title" content="Das Erbe der Neun – Ein Sudoku-Epos">
+  <meta property="og:description" content="Ein Sudoku-Epos für Windows: kostenlos, mit Kampagne, Tagesrätsel und Belohnungen. Ohne Konto, offline spielbar.">
+  <meta property="og:url" content="https://breiti35.github.io/das-erbe-der-neun/">
+  <meta property="og:image" content="https://breiti35.github.io/das-erbe-der-neun/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Schriftzug „Das Erbe der Neun – Ein Sudoku-Epos“, das Spielsymbol und ein Sudoku-Spielfeld mit eingetragenen Zahlen">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/icon-192.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="hero">
+    <nav class="topnav" aria-label="Abschnitte">
+      <a href="#bilder">Bilder</a>
+      <a href="#installation">Installation</a>
+      <a href="#funktionen">Funktionen</a>
+      <a href="#fragen">Fragen</a>
+    </nav>
+
+    <div class="hero-inner">
+      <img class="app-icon" src="img/icon-256.png" width="128" height="128" alt="">
+      <h1>Das Erbe der Neun</h1>
+      <p class="subtitle">Ein Sudoku-Epos</p>
+      <p class="tagline">Das Zahlenrätsel für die kleine Pause – mit Kampagne, Tagesrätsel und Belohnungen</p>
+
+      <a class="download-button" id="download"
+         href="https://github.com/breiti35/das-erbe-der-neun/releases/latest/download/ErbeDerNeun-win-Setup.exe">
+        <svg class="download-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+          <path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Für Windows herunterladen</span>
+      </a>
+
+      <p class="release-meta">
+        <span id="release-info">Immer die neueste Version</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>Windows 10/11</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>ca. <span id="release-size">72</span> MB</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>kostenlos</span>
+      </p>
+      <p class="hero-hint">Kein Konto, keine Werbung. Die Installation dauert nur einen Moment – <a href="#installation">so geht’s</a>.</p>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <section class="section" id="bilder" aria-labelledby="bilder-titel">
+      <h2 id="bilder-titel">So sieht das Spiel aus</h2>
+      <p class="section-intro">Klicke auf ein Bild, um es groß zu sehen.</p>
+      <div class="gallery">
+        <figure class="shot shot-wide">
+          <a href="img/spielfeld-hell.webp">
+            <img src="img/spielfeld-hell.webp" width="1920" height="1200"
+                 alt="Spielfeld im hellen Design: ein Sudoku der Stufe Mittel mit eingetragenen Zahlen und kleinen Notizen, rechts die Zifferntasten, die Uhr und die Hilfsmittel.">
+          </a>
+          <figcaption>Das Spielfeld: große Zahlen, Notizen und praktische Hilfen</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="img/hauptmenue.webp">
+            <img src="img/hauptmenue.webp" width="1920" height="1200" loading="lazy"
+                 alt="Das Hauptmenü im dunkelgrünen Farbthema „Wald“ mit dem Titel „Das Erbe der Neun – Ein Sudoku-Epos“, der Spielerleiste mit Level und Münzen und den Knöpfen für Fortsetzen, Neues Spiel, Kampagne, Tagesrätsel und Shop.">
+          </a>
+          <figcaption>Das Hauptmenü im Farbthema „Wald“</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="img/spielfeld-sonnenuntergang.webp">
+            <img src="img/spielfeld-sonnenuntergang.webp" width="1920" height="1200" loading="lazy"
+                 alt="Dasselbe Spielfeld im dunklen Farbthema „Sonnenuntergang“ mit orangefarbenen Zahlen.">
+          </a>
+          <figcaption>Farbthema „Sonnenuntergang“</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="img/kampagne.webp">
+            <img src="img/kampagne.webp" width="1920" height="1200" loading="lazy"
+                 alt="Kampagnenkarte mit fünf Welten zu je zehn Stufen; die ersten Stufen sind mit Sternen bewertet, spätere Welten sind noch gesperrt.">
+          </a>
+          <figcaption>Die Kampagne mit 5 Welten und Sternen</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="img/shop.webp">
+            <img src="img/shop.webp" width="1920" height="1200" loading="lazy"
+                 alt="Der Shop mit sieben Farbthemen wie Hell, Dunkel, Ozean, Wald und Neon, die man mit Münzen kaufen kann.">
+          </a>
+          <figcaption>Im Shop gibt es Farbthemen und Goodies</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="installation" aria-labelledby="installation-titel">
+      <h2 id="installation-titel">So installierst du das Spiel</h2>
+      <p class="section-intro">Drei Schritte, ganz ohne Fachwissen.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-number" aria-hidden="true">1</span>
+          <div class="step-body">
+            <h3>Herunterladen</h3>
+            <p>Klicke oben auf <a href="#download"><strong>„Für Windows herunterladen“</strong></a>. Die Datei
+              <span class="filename">ErbeDerNeun-win-Setup.exe</span> landet in deinem Ordner <strong>Downloads</strong>.</p>
+          </div>
+        </li>
+
+        <li class="step">
+          <span class="step-number" aria-hidden="true">2</span>
+          <div class="step-body">
+            <h3>Datei öffnen</h3>
+            <p>Öffne die heruntergeladene Datei mit einem Doppelklick (oder im Browser unter „Downloads“ auf
+              „Datei öffnen“).</p>
+            <div class="callout">
+              <p><strong>Keine Sorge, wenn ein blaues Fenster erscheint.</strong> Windows kennt den Herausgeber dieses
+                kleinen Hobby-Spiels noch nicht und warnt deshalb vorsichtshalber. Das ist bei Programmen ohne teures
+                Zertifikat ganz normal.</p>
+              <p>Klicke zuerst auf <strong>„Weitere Informationen“</strong> und dann auf <strong>„Trotzdem ausführen“</strong>.</p>
+            </div>
+
+            <figure class="smartscreen" role="img"
+                    aria-label="Vereinfachte Skizze der Windows-Meldung: Erst auf den Link „Weitere Informationen“ klicken, danach erscheint unten der Knopf „Trotzdem ausführen“.">
+              <div class="ss-panel" aria-hidden="true">
+                <p class="ss-title">Der Computer wurde durch Windows geschützt</p>
+                <p class="ss-text">Von Microsoft Defender SmartScreen wurde der Start einer unbekannten App verhindert …</p>
+                <p class="ss-link"><span class="ss-mark">1</span> <span class="ss-target">Weitere Informationen</span></p>
+                <div class="ss-buttons"><span class="ss-btn">Nicht ausführen</span></div>
+              </div>
+              <div class="ss-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="32" height="32" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="ss-panel" aria-hidden="true">
+                <p class="ss-title">Der Computer wurde durch Windows geschützt</p>
+                <p class="ss-text">App: ErbeDerNeun-win-Setup.exe<br>Herausgeber: Unbekannter Herausgeber</p>
+                <div class="ss-buttons">
+                  <span class="ss-btn ss-target"><span class="ss-mark">2</span> Trotzdem ausführen</span>
+                  <span class="ss-btn">Nicht ausführen</span>
+                </div>
+              </div>
+              <figcaption>Vereinfachte Skizze – das echte Fenster sieht ähnlich aus.</figcaption>
+            </figure>
+          </div>
+        </li>
+
+        <li class="step">
+          <span class="step-number" aria-hidden="true">3</span>
+          <div class="step-body">
+            <h3>Spielen</h3>
+            <p>Die Installation läuft von selbst, ohne weitere Fragen. Danach startet das Spiel sofort. Später findest
+              du es über die Verknüpfung <strong>„Das Erbe der Neun“ auf dem Desktop</strong> oder im Startmenü.</p>
+            <p><strong>Updates kommen automatisch:</strong> Gibt es eine neue Version, zeigt das Spiel im Hauptmenü einen
+              Hinweis. Ein Klick auf „Jetzt aktualisieren“ genügt – deine Spielstände bleiben erhalten.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="funktionen" aria-labelledby="funktionen-titel">
+      <h2 id="funktionen-titel">Was das Spiel kann</h2>
+      <ul class="features">
+        <li class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h4v-5H4zm6 0h4V10h-4zm6 0h4V4h-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <h3>5 Schwierigkeitsstufen</h3>
+          <p>Von Leicht bis Meister – bewertet nach echten Lösungstechniken, nicht nach der Zahl der Vorgaben.</p>
+        </li>
+        <li class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 21V4m0 0h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Kampagne mit 50 Stufen</h3>
+          <p>Fünf Welten mit je zehn Rätseln. Für jede Stufe gibt es bis zu drei Sterne.</p>
+        </li>
+        <li class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4m8-4v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="15" r="1.6" fill="currentColor"/></svg>
+          <h3>Tägliche Herausforderung</h3>
+          <p>Jeden Tag ein neues Rätsel. Verpasste Tage des Monats lassen sich nachholen.</p>
+        </li>
+        <li class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+          <h3>Münzen, Shop und Goodies</h3>
+          <p>Gelöste Rätsel bringen Münzen – zum Beispiel für Hinweise mit Erklärung oder einen Zeitstopp.</p>
+        </li>
+        <li class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4h10v5a5 5 0 0 1-10 0zm0 2H4v1a3 3 0 0 0 3 3m10-4h3v1a3 3 0 0 1-3 3M12 14v3m-4 3h8m-6 0 .5-3h3l.5 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>27 Erfolge</h3>
+          <p>Kleine Ziele in neun Bereichen – vom ersten gelösten Rätsel bis zur langen Siegesserie.</p>
+        </li>
+        <li class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16.5 13.5c2.4.1 4 1.5 4.5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h3>Mehrere Profile und Bestenliste</h3>
+          <p>Die ganze Familie spielt an einem Computer – jeder mit eigenem Spielstand. Wer ist am schnellsten?</p>
+        </li>
+        <li class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.5a8.5 8.5 0 1 0 0 17c1.4 0 2-.8 2-1.8 0-1.3-1.2-1.7-1.2-2.9 0-1 .8-1.8 1.8-1.8h2.2a3.7 3.7 0 0 0 3.7-3.7C20.5 6.6 16.7 3.5 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="11" r="1.3" fill="currentColor"/><circle cx="10" cy="7.3" r="1.3" fill="currentColor"/><circle cx="14.5" cy="7.3" r="1.3" fill="currentColor"/></svg>
+          <h3>7 Farbthemen</h3>
+          <p>Hell, Dunkel, Ozean, Wald, Sonnenuntergang, Neon und Papier – dazu verschiedene Zahlen-Schriften.</p>
+        </li>
+        <li class="feature">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9.5a12 12 0 0 1 16 0M7 13a7.5 7.5 0 0 1 10 0m-7.2 3.4a3 3 0 0 1 4.4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 4l16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <h3>Offline spielbar</h3>
+          <p>Kein Konto, keine Anmeldung. Internet braucht das Spiel nur, um nach Updates zu schauen.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="geschichte" aria-labelledby="geschichte-titel">
+      <h2 id="geschichte-titel">Die Geschichte hinter dem Namen</h2>
+      <div class="card story">
+        <p>Dieses Spiel ist ein Geschenk – gebaut von einem Sohn für seinen Vater.</p>
+        <p>In einem Sudoku dreht sich alles um die Neun: neun Ziffern, neun Felder in jedem Block, neun Blöcke auf dem
+          Brett. Und ein Erbe ist etwas, das man nicht für sich behält, sondern weitergibt. So kam
+          <strong>Das Erbe der Neun</strong> zu seinem Namen.</p>
+      </div>
+    </section>
+
+    <section class="section" id="neu" aria-labelledby="neu-titel">
+      <h2 id="neu-titel">Neu in dieser Version</h2>
+      <div class="card release-notes" id="release-notes" aria-live="polite">
+        <p class="notes-fallback" id="notes-fallback">Was sich in der neuesten Version geändert hat, steht auf der
+          <a href="https://github.com/breiti35/das-erbe-der-neun/releases/latest">GitHub-Seite des Spiels</a>.</p>
+      </div>
+    </section>
+
+    <section class="section" id="fragen" aria-labelledby="fragen-titel">
+      <h2 id="fragen-titel">Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Kostet das etwas?</summary>
+          <p>Nein. Das Erbe der Neun ist komplett kostenlos – ohne Werbung, ohne Abo und ohne Käufe mit echtem Geld.
+            Die Münzen im Spiel verdienst du nur durch Rätseln.</p>
+        </details>
+        <details>
+          <summary>Brauche ich Internet?</summary>
+          <p>Nur zum Herunterladen. Spielen kannst du danach jederzeit ohne Internet. Ist eine Verbindung da, schaut
+            das Spiel kurz nach dem Start, ob es eine neue Version gibt.</p>
+        </details>
+        <details>
+          <summary>Wie bekomme ich Updates?</summary>
+          <p>Automatisch: Gibt es eine neue Version, erscheint im Hauptmenü ein Hinweis. Klicke auf
+            „Jetzt aktualisieren“ – das Spiel lädt das Update, startet neu, und fertig. Du musst die Datei von dieser
+            Seite nicht noch einmal herunterladen.</p>
+        </details>
+        <details>
+          <summary>Wo sind meine Spielstände?</summary>
+          <p>Im Ordner <span class="filename">%APPDATA%\ErbeDerNeun</span>. Du erreichst ihn, wenn du diesen Text in die
+            Adresszeile des Explorers eingibst. Die Spielstände bleiben auch dann erhalten, wenn du das Spiel
+            deinstallierst – nach einer neuen Installation ist alles wieder da.</p>
+          <p>Früher hieß das Spiel „SudokuQuest“. Wer es schon gespielt hat, muss nichts tun: Beim ersten Start werden
+            die Spielstände aus <span class="filename">%APPDATA%\SudokuQuest</span> automatisch übernommen. Der alte
+            Ordner bleibt zur Sicherheit erhalten.</p>
+        </details>
+        <details>
+          <summary>Wie deinstalliere ich das Spiel?</summary>
+          <p>Öffne die <strong>Windows-Einstellungen</strong> → <strong>Apps</strong> (bzw. „Installierte Apps“), suche
+            <strong>Das Erbe der Neun</strong> und wähle <strong>Deinstallieren</strong>. Deine Spielstände bleiben dabei erhalten.</p>
+        </details>
+        <details>
+          <summary>Etwas funktioniert nicht?</summary>
+          <p>Im Spiel unter <strong>Einstellungen</strong> → <strong>Hilfe und Info</strong> gibt es den Knopf
+            <strong>„Fehlerbericht erstellen“</strong>. Er legt eine ZIP-Datei auf deinem Desktop ab. Schicke diese Datei
+            einfach an den Entwickler – es wird nichts automatisch verschickt.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Das Erbe der Neun</p>
+    <p><a href="https://github.com/breiti35/das-erbe-der-neun/releases">Alle Versionen auf GitHub</a></p>
+    <p class="footer-note">Diese Seite setzt keine Cookies und nutzt kein Tracking. Nur die Versionsnummer und die
+      Neuigkeiten werden beim Öffnen direkt bei GitHub abgefragt.</p>
+  </footer>
+</body>
+</html>
